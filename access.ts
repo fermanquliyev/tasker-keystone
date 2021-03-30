@@ -2,11 +2,11 @@ import { permissionsList } from './schemas/fields';
 import { ListAccessArgs } from './types';
 // At it's simplest, the access control returns a yes or no value depending on the users session
 
-export function isSignedIn({ session }: ListAccessArgs) {
+export function isSignedIn({ session }: ListAccessArgs): boolean {
   return !!session;
 }
 
-const generatedPermissions = Object.fromEntries(
+const generatedPermissions = (<any>Object).fromEntries(
   permissionsList.map((permission) => [
     permission,
     function ({ session }: ListAccessArgs) {

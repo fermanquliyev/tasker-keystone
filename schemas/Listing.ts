@@ -1,6 +1,6 @@
 import { list } from '@keystone-next/keystone/schema';
 import {
-    checkbox, integer, float, password, select, text, timestamp,
+    checkbox, integer, text,
 } from '@keystone-next/fields';
 
 export const Listing = list({
