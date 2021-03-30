@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { list } from '@keystone-next/keystone/schema';
-import { text, password, relationship } from '@keystone-next/fields';
+import { text, password, relationship, select } from '@keystone-next/fields';
 import { permissions, rules } from '../access';
 
 export const User = list({
@@ -21,6 +21,17 @@ export const User = list({
         name: text({ isRequired: true }),
         email: text({ isRequired: true, isUnique: true }),
         password: password(),
+        status: select({
+            options: [
+                { value: 'PROVIDER', label: 'Service Provider' },
+                { value: 'CONSUMER', label: 'Service Consumer' }
+            ],
+            defaultValue: 'CONSUMER'
+        }),
+        workArea: relationship({
+            ref: 'ProviderWorkArea',
+            many: true
+        }),
         role: relationship({
             ref: 'Role.assignedTo',
             access: {

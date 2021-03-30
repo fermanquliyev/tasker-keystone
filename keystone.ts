@@ -8,6 +8,8 @@ import { permissionsList } from './schemas/fields';
 import { Role } from './schemas/Role';
 import { Listing } from './schemas/Listing';
 import { User } from './schemas/User';
+import {ProviderWorkSchedule} from './schemas/ProviderWorkSchedule';
+import {ProviderWorkArea} from './schemas/ProviderWorkArea';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 
@@ -58,6 +60,8 @@ export default withAuth(
     },
     lists: createSchema({
       // Schema items go in here
+      ProviderWorkSchedule,
+      ProviderWorkArea,
       User,
       Role,
       Listing,
