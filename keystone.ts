@@ -10,6 +10,7 @@ import { Listing } from './schemas/Listing';
 import { User } from './schemas/User';
 import {ProviderWorkSchedule} from './schemas/ProviderWorkSchedule';
 import {ProviderWorkArea} from './schemas/ProviderWorkArea';
+import {ProviderPersonalInfo} from './schemas/ProviderPersonalInfo'
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 
@@ -62,6 +63,7 @@ export default withAuth(
       // Schema items go in here
       ProviderWorkSchedule,
       ProviderWorkArea,
+      ProviderPersonalInfo,
       User,
       Role,
       Listing,

@@ -28,10 +28,6 @@ export const User = list({
             ],
             defaultValue: 'CONSUMER'
         }),
-        workArea: relationship({
-            ref: 'ProviderWorkArea',
-            many: true
-        }),
         role: relationship({
             ref: 'Role.assignedTo',
             access: {
